@@ -14,8 +14,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'detail.html',
 })
 export class DetailPage {
-
+  item:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log("navigate with params",navParams);
+    if(navParams.data){
+      this.item=navParams.data;
+    }else{
+      console.log("Navigated to without params");
+    }
   }
 
   ionViewDidLoad() {
